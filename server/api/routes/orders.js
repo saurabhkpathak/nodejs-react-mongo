@@ -9,6 +9,7 @@ router.get('/', (req, res, next) => {
     Order
         .find()
         .select('_id quantity product')
+        .populate('product', 'name price')
         .exec()
         .then(response => {
             res.status(200).json(response);
