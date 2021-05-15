@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
+const orderRoutes = require('./api/routes/orders');
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 // Routes handling requests
 app.use('/products', productRoutes);
+app.use('/orders', orderRoutes);
 
 // Connect to DB
 mongoose.connect('mongodb+srv://saurabhkpathak:' + process.env.MONGO_PASS
