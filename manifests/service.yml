@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "saurabhcluster-6d2d"
+    labels:
+        app: "saurabhcluster-6d2d"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: http
+    selector:
+        app: "saurabhcluster-6d2d"
