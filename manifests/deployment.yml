@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "saurabhcluster-6d2d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "saurabhcluster-6d2d"
+  template:
+    metadata:
+      labels:
+        app: "saurabhcluster-6d2d"
+    spec:
+      containers:
+        - name: "saurabhcluster-6d2d"
+          image: "saurabhregistry.azurecr.io/saurabhcluster"
+          ports:
+          - containerPort: 3000
