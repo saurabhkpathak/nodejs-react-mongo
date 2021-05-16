@@ -23,4 +23,4 @@ const fetchUsers = async () => {
     return users.json();
 };
 
-const usersList = (users: any[]) => users.map((user: any) => <div>github users list<span>{user.login}</span><img src={user.avatar_url} alt='user pic' /></div>);
+const usersList = (users: any[]) => users.map((user: any) => <div><span>{user.login}</span><img src={user.avatar_url} alt='user pic' /></div>);
